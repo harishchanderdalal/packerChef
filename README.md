@@ -18,3 +18,4 @@ Vagrant file variable that need to update before vagrant up.
 | :------------------------ | -----------------------------------------   |
 |  `access_key` | AWS Account access key `Example = 123243sdaft34tasf3` |
 | `secret_key` | AWS Account Secret key `Example = 12232432asfesdf23423qewsf2332413sdf` |
+| `aws.region` | AWS Region Name `Example = ap-southeast-1` |
