@@ -1,27 +1,23 @@
 {
-  "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": ""
-  },
-  
-  "builders": [{
-    "type": "amazon-ebs",
-    "access_key": "{{user `aws_access_key`}}",
-    "secret_key": "{{user `aws_secret_key`}}",
-    "region": "us-east-1",
-    "vpc_id": "vpc-f4f2079d",
-    "subnet_id": "subnet-1c49bc75",
-    "security_group_id": "sg-b422e8dc",
-    "source_ami": "ami-e7afd688",
-    "instance_type": "t2.micro",
-    "ssh_username": "ubuntu",
-    "ami_name": "chefBootStrap"
-  }],
-  
-  "provisioners": [{
-    "type": "shell",
-    "inline": [
-      "sleep 30",
-    ]
-  }]
+        "description": "Amazon AMI's",
+
+        "builders": [{
+                "type": "amazon-ebs",
+                "access_key": "ASXXXXXXXXXXXXXXXXXQ",
+                "secret_key": "DvSXXXXXXXXXXXXXXXXXSXXXXXXXXXXXXXXXXXgy",
+                "region": "ap-southeast-1",
+                "source_ami": "ami-6f198a0c",
+                "instance_type": "t2.micro",
+                "ssh_username": "ubuntu",
+                "ami_name": "chef_node"
+                }],
+
+        "provisioners": [{
+                "type": "shell",
+                        "inline": [
+                        "sleep 30",
+                        "sudo apt-get update",
+                        "sudo apt-get install -y apache2"
+                        ]
+                }]
 }
